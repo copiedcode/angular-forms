@@ -2,14 +2,14 @@
 <div class="container">
     <h2>Benutzereinstellungen</h2>
 
-<form>
+<form #form="ngForm">
     <div class="form-group">
         <label for="name">Name</label>
-        <input id="name" name="name" class="form-control" placeholder="Name" />
+        <input id="name" name="name" class="form-control" placeholder="Name" ngModel/>
     </div> 
     <div class="form-check form-group">
-        <input class="form-check-input" type="checkbox" id="emailOffers">
-        <label class="form-check-label" for="emailOffers">
+        <input class="form-check-input" type="checkbox" name= "emailOffers" id="emailOffers" ngModel/>
+        <label class="form-check-label" for="emailOffers" >
           Angebote per E-Mail erhalten
         </label>
     </div>
@@ -17,19 +17,19 @@
     <h5>Style Benutzeroberfläche</h5>
     <div class="form-group">
         <div class="form-check">
-            <input class="form-check-input" type="radio" name="interfaceStyle" id="lightInterface" value="light" checked>
+            <input class="form-check-input" type="radio" name="interfaceStyle" id="lightInterface" value="light" checked ngModel>
             <label class="form-check-label" for="lightInterface">
               Hell
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="interfaceStyle" id="mediumInterface" value="medium">
+            <input class="form-check-input" type="radio" name="interfaceStyle" id="mediumInterface" value="medium" ngModel>
             <label class="form-check-label" for="mediumInterface">
               Mittel
             </label>
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="radio" name="interfaceStyle" id="darkInterface" value="dark" >
+            <input class="form-check-input" type="radio" name="interfaceStyle" id="darkInterface" value="dark" ngModel >
             <label class="form-check-label" for="darkInterface">
               Dunkel
             </label>
@@ -37,8 +37,8 @@
     </div>
 
     <div class="form-group">
-        <label for="exampleFormControlSelect1">Abonnement-Typ</label>
-        <select class="form-control" id="exampleFormControlSelect1">
+        <label for="subscriptionType">Abonnement-Typ</label>
+        <select class="form-control" id="subscriptionType" name="subscriptionType" ngModel>
           <option>Monatlich</option>
           <option>Jährlich</option>
           <option>Lebenslang</option>
@@ -47,9 +47,11 @@
 
     <div class="form-group">
         <label for="notes" >Notes</label>
-        <textarea id="notes" name="notes" class="form-control" rows="3"></textarea>
+        <textarea id="notes" name="notes" class="form-control" rows="3" ngModel></textarea>
     </div>
 
 
     <button class="btn btn-primary">Ok</button>
 </form>
+</div>
+<h3> {{ form.value | json }} </h3>
