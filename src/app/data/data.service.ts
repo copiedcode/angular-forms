@@ -17,4 +17,8 @@ export class DataService {
 
     //return of(userSettings);
   }
+
+  getSubscriptionTypes(): Observable<string[]> {
+    return of(['Monatlich', 'Jährlich', 'Lebenslang']);
+  }
 }
