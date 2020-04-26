@@ -31,6 +31,14 @@
             bsDaterangepicker>
 </div>
 Start Date: {{ startDate}}
+
+<div class="form-group">
+  <rating [(ngModel)]="userRating" [max]="maxRating" [readonly]="isReadonly"
+        name="userRating" id="userRating"
+        [titles]="['one','two','three']"></rating>
+</div>
+User Rating: {{ userRating }}
+
      
 
    
